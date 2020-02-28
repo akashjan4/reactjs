@@ -1,0 +1,16 @@
+.root-container {
+  background: #f2f2f2;
+  width: 100vw;
+  height: 100vh;
+}
+nav ul {
+  display: inline-block;
+}
+nav ul li {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  list-style: none;
+  background: #fff;
+  font-weight: bolder;
+}
