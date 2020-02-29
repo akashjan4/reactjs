@@ -116,3 +116,7 @@ ReactDOM.render(
     , document.getElementById('main'))
 
 ```
+```TypeScript
+className=""
+style={{color:#243ed, backgroundColor:'red'}}
+```
