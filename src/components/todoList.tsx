@@ -1,6 +1,7 @@
 import * as React from "react";
 
 export interface IToDo {
+  id: string;
   item: string;
   completed: boolean;
 }
@@ -13,8 +14,8 @@ interface IToDoList {
  * list property is an Array
  * list property Array is made of Objects which have 'item' and 'completed' property
  * @params list
- * @interface IToDoList array of ```IToDo``` 
- * @interface IToDo object of ```item``` and ```completed``` properties 
+ * @interface IToDoList array of ```IToDo```
+ * @interface IToDo object of ```item``` and ```completed``` properties
  */
 export class ToDoList extends React.Component<IToDoList, {}> {
   render() {
@@ -27,6 +28,7 @@ export class ToDoList extends React.Component<IToDoList, {}> {
               type="checkbox"
               checked={item.completed}
               style={{ margin: 5 }}
+              id={item.id}
             />
             {item.item}
           </label>

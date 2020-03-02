@@ -28,19 +28,19 @@ export class MainContent extends React.Component {
     medals with Acoustix in 1990 and with Max Q in 2007.`;
 
     const toDOItems:IToDo[] = [
-      { item: "wake up", completed: true },
-      { item: "get ready", completed: true },
-      { item: "drive to office", completed: true },
-      { item: "attend training", completed: false },
-      { item: "exercise", completed: false },
-      { item: "sleep", completed: true }
+      { id:'324flk3d',item: "wake up", completed: true },
+      { id:'55dflk3d',item: "get ready", completed: true },
+      { id:'eeerflk3d',item: "drive to office", completed: true },
+      { id:'5te44lk3d',item: "attend training", completed: false },
+      { id:'76wrlk3d',item: "exercise", completed: false },
+      { id:'234flk3`d',item: "sleep", completed: true }
     ];
     return (
       <main>
         <h1>{title}</h1>
         {content}
         <div style={{ marginTop: 10 }}>
-          <ToDoList list={toDOItems} />
+          <ToDoList  list={toDOItems} />
         </div>
       </main>
     );
