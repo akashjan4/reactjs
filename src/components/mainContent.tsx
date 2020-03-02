@@ -1,5 +1,7 @@
 import * as React from "react";
 import { ToDoList, IToDo } from "./todoList";
+import { StateComponent } from "./states";
+
 
 export class MainContent extends React.Component {
   render() {
@@ -33,7 +35,7 @@ export class MainContent extends React.Component {
       { id:'eeerflk3d',item: "drive to office", completed: true },
       { id:'5te44lk3d',item: "attend training", completed: false },
       { id:'76wrlk3d',item: "exercise", completed: false },
-      { id:'234flk3`d',item: "sleep", completed: true }
+      { id:'234flk3`d',item: "sleep", completed: false }
     ];
     return (
       <main>
@@ -42,6 +44,7 @@ export class MainContent extends React.Component {
         <div style={{ marginTop: 10 }}>
           <ToDoList  list={toDOItems} />
         </div>
+        <StateComponent/>
       </main>
     );
   }

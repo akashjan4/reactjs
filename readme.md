@@ -106,6 +106,7 @@ export default class App extends React.Component {
 ReactDOM.render(<h1>1</h1><h2>2</h2>,
       document.getElementById('main'))
 ```
+
 ```HTML
 <!--Valid-->
 ReactDOM.render(
@@ -116,7 +117,37 @@ ReactDOM.render(
     , document.getElementById('main'))
 
 ```
+
 ```TypeScript
 className=""
 style={{color:#243ed, backgroundColor:'red'}}
 ```
+
+## props are immutable(unchangeable)
+
+# States
+
+- Pre-requisite - **component have to be class base component**
+- Example 
+```Typescript
+  import * as React from "react";
+  interface IProps {}
+  interface IState {
+    answer?: string;
+  }
+
+  class StateComponent extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+    answer: "yes"
+    };
+  }
+  render() {
+  return <h1>Do you have an answer{this.state.answer}</h1>;
+  }
+  }
+  ```
+
+* [prop vs sate](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
+
