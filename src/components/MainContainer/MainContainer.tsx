@@ -2,11 +2,12 @@ import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { About } from "../About/About";
 import { Services } from "../Services/Service";
+import { Home } from "../Home/Home";
 interface IProps {}
 interface IState {
   sidePanelOpen: boolean;
 }
-export class SideNavigation extends React.Component<IProps, IState> {
+export class MainContainer extends React.Component<IProps, IState> {
   sidePanel;
   mainPanel;
 
@@ -54,10 +55,10 @@ export class SideNavigation extends React.Component<IProps, IState> {
           >
             &times;
           </div>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
-          <a href="#">Contact</a>
+          <a href="/about">About</a>
+          <a href="/services">Services</a>
+          <a href="/">Clients</a>
+          <a href="/">Contact</a>
         </div>
 
         <div
@@ -67,13 +68,21 @@ export class SideNavigation extends React.Component<IProps, IState> {
         >
           <span
             onClick={this.openNav}
-            style={{ display: this.state.sidePanelOpen ? "none" : "block" }}
+            style={{
+              display: this.state.sidePanelOpen ? "none" : "block",
+              position: "absolute",
+              top: 0,
+            }}
           >
             open
           </span>
-          <h1>Main {this.state.sidePanelOpen}</h1>
+          {/* <h1>Main </h1>
+          <h2>-- {`${this.state.sidePanelOpen}`}--</h2> */}
           <Router>
             <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
               <About />
             </Route>
             <Route path="/services">
