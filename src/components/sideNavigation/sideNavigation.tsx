@@ -1,4 +1,7 @@
 import * as React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { About } from "../About/About";
+import { Services } from "../Services/Service";
 interface IProps {}
 interface IState {
   sidePanelOpen: boolean;
@@ -69,6 +72,14 @@ export class SideNavigation extends React.Component<IProps, IState> {
             open
           </span>
           <h1>Main {this.state.sidePanelOpen}</h1>
+          <Router>
+            <Route exact path="/">
+              <About />
+            </Route>
+            <Route path="/services">
+              <Services />
+            </Route>
+          </Router>
         </div>
       </div>
     );

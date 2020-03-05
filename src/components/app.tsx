@@ -10,19 +10,9 @@ export class App extends React.Component {
   navigationLinks = [{ text: "About", link: "home" }];
   render() {
     return (
-      <Router>
-        <div className="parent-container">
-          {/* <NavigationBar/>
-        <MainContent /> */}
-          {/* <SideNavigation /> */}
-          <Route exact path="/">
-            <About />
-          </Route>
-          <Route path="/services">
-            <Services />
-          </Route>
-        </div>
-      </Router>
+      <div className="parent-container">
+        <SideNavigation />
+      </div>
     );
   }
 }
