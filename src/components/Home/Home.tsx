@@ -1,6 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
+import { HOC } from "../HOC/Hoc";
+import { LifeCycle } from "../LifeCycle/LIfeCycle";
 export class Home extends React.Component {
-    render(){
-        return<h1>Home Page</h1>
-    }
+ passTheNumber = 5;
+  render() {
+    return (
+      <div>
+        <HOC />
+        <LifeCycle  myNumber={this.passTheNumber}/>
+      </div>
+    );
+  }
 }

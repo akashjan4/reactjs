@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { About } from "../About/About";
 import { Services } from "../Services/Service";
 import { Home } from "../Home/Home";
@@ -11,7 +11,7 @@ export class MainContainer extends React.Component<IProps, IState> {
   sidePanel;
   mainPanel;
 
-  constructor(props: IProps) {
+  constructor(props: IProps, private link: Link) {
     super(props);
     this.state = {
       sidePanelOpen: false
@@ -19,6 +19,10 @@ export class MainContainer extends React.Component<IProps, IState> {
     this.sidePanel = React.createRef();
     this.mainPanel = React.createRef();
   }
+  onRouteClick = event => {
+    this.setState({ sidePanelOpen: true });
+  };
+
   openNav = () => {
     // document.getElementById("mySidenav").style.width = "250px";
     // document.getElementById("main").style.marginLeft = "250px";
@@ -55,7 +59,9 @@ export class MainContainer extends React.Component<IProps, IState> {
           >
             &times;
           </div>
-          <a href="/about">About</a>
+          <a href="/about" onClick={this.onRouteClick}>
+            About
+          </a>
           <a href="/services">Services</a>
           <a href="/">Clients</a>
           <a href="/">Contact</a>
@@ -71,13 +77,14 @@ export class MainContainer extends React.Component<IProps, IState> {
             style={{
               display: this.state.sidePanelOpen ? "none" : "block",
               position: "absolute",
-              top: 0,
+              top: 0
             }}
           >
             open
           </span>
-          {/* <h1>Main </h1>
-          <h2>-- {`${this.state.sidePanelOpen}`}--</h2> */}
+          <h1>Main </h1>
+          <h2>--{`${this.state.sidePanelOpen}`}--</h2>
+          ------------------------------------------
           <Router>
             <Route exact path="/">
               <Home />
