@@ -1,0 +1,23 @@
+:root {
+    font-size: 16px;
+    font-family: "Open Sans";
+    --text-primary: #ece4e4;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+}
+
+body {
+    color: black;
+    background: var(--text-primary);
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    background: var(--text-primary);
+    width: calc(100vw - 25rem);
+    height: calc(100vh - 0.5rem);
+    padding: 1rem;
+}
